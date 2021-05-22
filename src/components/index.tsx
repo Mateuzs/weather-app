@@ -1,3 +1,4 @@
 export { MyWeatherStationsContainer } from "./MyWeatherStationsContainer";
 export { WeatherContainer } from "./WeatherContainer";
-export { Header } from "./Header";
+export { NavBar } from "./NavBar";
+export { NavBarButton } from "./NavBarButton";

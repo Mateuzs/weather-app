@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
@@ -51,6 +52,11 @@ module.exports = {
       favicon: path.resolve(__dirname, "public/favicon.ico"),
       template: path.resolve(__dirname, "public/index.html"),
       filename: "index.html",
+    }),
+    new webpack.DefinePlugin({
+      "process.env.WEATHER_API_KEY": JSON.stringify(
+        process.env.WEATHER_API_KEY
+      ),
     }),
   ],
   resolve: {
