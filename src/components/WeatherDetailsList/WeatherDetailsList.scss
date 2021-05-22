@@ -1,0 +1,17 @@
+.weather-details-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  p {
+    font-size: calc(7px + 2vmin);
+    margin: 0 20px;
+  }
+
+  .weather-icon-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 20px;
+  }
+}
