@@ -9,6 +9,12 @@ import {
 } from "./components";
 // styles
 import "./App.scss";
+// constants, utils
+import {
+  ROUTE_WEATHER,
+  ROUTE_MY_WEATHER_STATIONS,
+  ROUTE_DEFAULT,
+} from "./constants";
 
 const App: FunctionComponent = () => {
   return (
@@ -16,11 +22,14 @@ const App: FunctionComponent = () => {
       <Router>
         <NavBar />
         <Switch>
-          <Route path="/weather">
+          <Route path={ROUTE_WEATHER}>
             <WeatherContainer />
           </Route>
-          <Route path="/my-weather-stations">
+          <Route path={ROUTE_MY_WEATHER_STATIONS}>
             <MyWeatherStationsContainer />
+          </Route>
+          <Route path={ROUTE_DEFAULT}>
+            <div></div>
           </Route>
         </Switch>
       </Router>
