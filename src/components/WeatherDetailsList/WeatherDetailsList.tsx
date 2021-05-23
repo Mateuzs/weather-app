@@ -1,75 +1,40 @@
 // external
-import React, { FunctionComponent, memo } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { FunctionComponent, memo } from "react";
+// components
+import { WeatherDetailsElement } from "../../components";
 //types
+import { WeatherDetailsListProps } from "../../types";
+// constants, utils
 import {
-  WeatherDetailsElementProps,
-  WeatherDetailsListProps,
-} from "../../types";
+  TITLE_DATE,
+  TITLE_ICON,
+  TITLE_DESCRIPTION,
+  TITLE_LOW,
+  TITLE_HIGH,
+} from "../../constants";
 // styles
 import "./WeatherDetailsList.scss";
-// constants, utils
-import { config } from "../../config";
-import {
-  WEATHER_ICON_HEIGHT,
-  WEATHER_ICON_WIDTH,
-  URL_IMAGE_ID_PLACEHOLDER,
-  TEMPERATURE_UNIT,
-} from "../../constants";
-
-const WeatherDetailsElement: FunctionComponent<WeatherDetailsElementProps> = ({
-  weatherDetailsElement,
-}) => {
-  const {
-    date,
-    weatherIcon,
-    weatherShortDescription,
-    minTemperature,
-    maxTemperature,
-  } = weatherDetailsElement;
-  const {
-    weatherImage: {
-      origin: weatherImageOrigin,
-      pathname: weatherImagePathname,
-    },
-  } = config;
-  const imageUrl = `${weatherImageOrigin}${weatherImagePathname.replace(
-    URL_IMAGE_ID_PLACEHOLDER,
-    weatherIcon
-  )}`;
-
-  return (
-    <li className="weather-details-element">
-      <p>{date} </p>
-      <div className="weather-icon-container">
-        <LazyLoadImage
-          height={WEATHER_ICON_HEIGHT}
-          src={imageUrl}
-          width={WEATHER_ICON_WIDTH}
-        />
-      </div>
-      <p>{weatherShortDescription} </p>
-      <p>
-        {minTemperature} {TEMPERATURE_UNIT}
-      </p>
-      <p>
-        {maxTemperature} {TEMPERATURE_UNIT}
-      </p>
-    </li>
-  );
-};
 
 const WeatherDetailsList: FunctionComponent<WeatherDetailsListProps> = ({
   weatherDetailsList,
 }) => (
-  <ul>
-    {weatherDetailsList.map((weatherDetailsElement) => (
-      <WeatherDetailsElement
-        weatherDetailsElement={weatherDetailsElement}
-        key={Math.random()}
-      />
-    ))}
-  </ul>
+  <table>
+    <tbody>
+      <tr className="weather-details-element">
+        <th>{TITLE_DATE}</th>
+        <th>{TITLE_ICON}</th>
+        <th>{TITLE_DESCRIPTION}</th>
+        <th>{TITLE_LOW}</th>
+        <th>{TITLE_HIGH} </th>
+      </tr>
+      {weatherDetailsList.map((weatherDetailsElement) => (
+        <WeatherDetailsElement
+          weatherDetailsElement={weatherDetailsElement}
+          key={Math.random()}
+        />
+      ))}
+    </tbody>
+  </table>
 );
 
 export default memo(WeatherDetailsList);

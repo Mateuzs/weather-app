@@ -1,23 +1,14 @@
 // external
-import React, { FunctionComponent, memo } from "react";
+import { FunctionComponent, memo } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 // types
 import {
   WeatherMapContainerProps,
   WeatherMapChangeViewProps,
-  DeviceType,
 } from "../../types";
+import { buildMapContainerStyleObject } from "../../utils";
 // styles
 import "./WeatherMapContainer.scss";
-
-const buildMapContainerStyleObject = (deviceType: DeviceType) => {
-  switch (deviceType) {
-    case DeviceType.DESKTOP:
-      return { height: "500px", width: "500px" };
-    case DeviceType.MOBILE:
-      return { height: "300px", width: "300px" };
-  }
-};
 
 // Leaflet external map object can be updated only by it's children
 // that's why internal change view component is needed

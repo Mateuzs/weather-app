@@ -1,4 +1,11 @@
-export { default as mapWeatherDataToWeatherDetailsList } from "./mapWeatherDataToWeatherDetailsList";
-export { default as getCityCoordinates } from "./getCityCoordinates";
+export { default as buildMapContainerStyleObject } from "./buildMapContainerStyleObject";
 export { default as convertTimestampToLocalDate } from "./convertTimestampToLocalDate";
 export { default as formatCelsiusValue } from "./formatCelsiusValue";
+export { default as getCityLocation } from "./getCityLocation";
+export { default as mapCurrentWeatherDataToWeatherDetailsList } from "./mapCurrentWeatherDataToWeatherDetailsList";
+export { default as mapForecastWeatherDataToWeatherDetailsList } from "./mapForecastWeatherDataToWeatherDetailsList";
+export { default as recognizeDeviceType } from "./recognizeDeviceType";
+export { default as validateStationAltitude } from "./validateStationAltitude";
+export { default as validateStationLatitude } from "./validateStationLatitude";
+export { default as validateStationLongitude } from "./validateStationLongitude";
+export { default as validateStationName } from "./validateStationName";

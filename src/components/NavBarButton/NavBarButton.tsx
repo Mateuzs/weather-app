@@ -1,5 +1,5 @@
 // external
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 // types
 import { NavBarButtonProps } from "../../types";

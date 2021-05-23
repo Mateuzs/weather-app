@@ -1,15 +1,16 @@
-//external
+//types
 import { WeatherApiCurrentWeather, WeatherDetails } from "../types";
 // constants, utils
 import { convertTimestampToLocalDate, formatCelsiusValue } from "../utils";
 
-const mapWeatherDataToWeatherDetails = (
+// mapping introduces soft fallback in case contract with api is broken
+// in unexpected way (missing values)
+const mapCurrentWeatherDataToWeatherDetailsList = (
   weatherData: WeatherApiCurrentWeather
 ): WeatherDetails[] => {
   const {
-    coord: { lat = "", lon = "" },
-    main: { temp_min = null, temp_max = null },
-    weather: [{ main = "", icon = "" }],
+    main: { temp_min = null, temp_max = null } = {},
+    weather: [{ main = "", icon = "" }] = [{}],
     dt = null,
     timezone = null,
   } = weatherData;
@@ -25,4 +26,4 @@ const mapWeatherDataToWeatherDetails = (
   ];
 };
 
-export default mapWeatherDataToWeatherDetails;
+export default mapCurrentWeatherDataToWeatherDetailsList;

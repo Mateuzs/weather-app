@@ -1,4 +1,4 @@
-.weather-details-element {
+.my-weather-stations-element {
   width: 100%;
   font-size: calc(7px + 2vmin);
   margin: 0 20px;
@@ -11,11 +11,4 @@
   th {
     padding: 0 10px 0;
   }
-}
-
-.weather-icon-container {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  margin: 0 20px;
 }
