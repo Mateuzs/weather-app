@@ -1,6 +1,8 @@
+@import "../../common.scss";
+
 .my-weather-stations-element {
   width: 100%;
-  font-size: calc(7px + 2vmin);
+  font-size: $weather-station-list-element-font-size;
   margin: 0 20px;
 
   td {
@@ -11,4 +13,8 @@
   th {
     padding: 0 10px 0;
   }
+}
+
+table {
+  margin-top: 30px;
 }

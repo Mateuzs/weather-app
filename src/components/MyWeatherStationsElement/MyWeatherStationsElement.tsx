@@ -15,7 +15,9 @@ const MyWeatherStationsElement: FunctionComponent<MyWeatherStationsElementProps>
         <td>{latitude}</td>
         <td>{longitude}</td>
         <td>{altitude}</td>
-        <button onClick={() => onDeleteCallback(name)}> X </button>
+        <td>
+          <button onClick={() => onDeleteCallback(name)}>x</button>
+        </td>
       </tr>
     );
   };

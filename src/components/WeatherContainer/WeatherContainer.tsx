@@ -204,7 +204,9 @@ const WeatherContainer: FunctionComponent = () => {
         </>
       )}
       {displayDetailPlaceholder && (
-        <h3>{EMPTY_WEATHER_DETAILS_PLACEHOLDER_DESCRIPTION}</h3>
+        <h4 className="empty-weather-details-placeholder">
+          {EMPTY_WEATHER_DETAILS_PLACEHOLDER_DESCRIPTION}
+        </h4>
       )}
     </div>
   );

@@ -1,9 +1,11 @@
+@import "common";
+
 .App-container {
-  background-color: #282c34;
+  background-color: $primary-background;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: $common-font-size;
+  color: $primary-foreground;
 }

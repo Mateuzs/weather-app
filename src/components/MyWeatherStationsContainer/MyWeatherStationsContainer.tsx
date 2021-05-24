@@ -99,7 +99,9 @@ const MyWeatherStationsContainer: FunctionComponent = () => {
         />
       )}
       {!weatherStationList.length && (
-        <h3>{EMPTY_STATION_LIST_PLACEHOLDER_DESCRIPTION}</h3>
+        <h4 className="empty-station-list-placeholder">
+          {EMPTY_STATION_LIST_PLACEHOLDER_DESCRIPTION}
+        </h4>
       )}
     </div>
   );

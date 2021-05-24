@@ -1,0 +1,54 @@
+$primary-background: #282c34;
+$primary-foreground: #ffffff;
+$error-foreground: #ff0000;
+
+$common-font-size: calc(10px + 2vmin);
+$button-font-size: calc(7px + 2vmin);
+$weather-station-list-element-font-size: calc(5px + 2vmin);
+$button-hover-color: #00ccff;
+
+%basic-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+%basic-button {
+  background-color: black;
+  color: $primary-foreground;
+  border: 2px solid $primary-foreground;
+  border-radius: 5px;
+  font-size: $button-font-size;
+  margin: 10px;
+  padding: 10px;
+  transition: color 0.3s linear;
+  &:hover {
+    color: $button-hover-color;
+  }
+}
+
+%basic-button-active {
+  background-color: $primary-foreground;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: $button-font-size;
+  margin: 10px;
+  padding: 10px;
+  &:hover {
+    color: black;
+  }
+}
+
+%basic-input-field {
+  font-size: calc(5px + 2vmin);
+  background-color: white;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+  }
+}

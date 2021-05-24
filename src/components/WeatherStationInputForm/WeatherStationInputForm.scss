@@ -1,11 +1,10 @@
+@import "../../common";
+
 .save-button {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  border-radius: 5px;
-  font-size: calc(5px + 2vmin);
-  margin: 20px;
-  padding: 10px;
+  @extend %basic-button;
+  &:active {
+    @extend %basic-button-active;
+  }
 }
 
 .save-button-disabled {
@@ -13,7 +12,7 @@
   color: white;
   border: 2px solid white;
   border-radius: 5px;
-  font-size: calc(5px + 2vmin);
+  font-size: $button-font-size;
   margin: 20px;
   padding: 10px;
 }
@@ -37,4 +36,6 @@
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: auto;
+  transform: translateZ(10px);
 }

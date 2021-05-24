@@ -1,3 +1,5 @@
+@import "../../common";
+
 .error-message {
-  color: red;
+  color: $error-foreground;
 }

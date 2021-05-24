@@ -1,10 +1,12 @@
+@import "../../common";
+
 .nav-bar-button {
   text-decoration: none;
-  color: white;
+  color: $primary-foreground;
   margin: 10px 20px;
   font-style: italic;
   transition: color 0.3s linear;
   &:hover {
-    color: #00ccff;
+    color: $button-hover-color;
   }
 }

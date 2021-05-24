@@ -1,21 +1,24 @@
+@import "../../common";
+
 .my-weather-stations-container {
-  background-color: #282c34;
   width: 100%;
   height: 100%;
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: $common-font-size;
+  color: $primary-foreground;
+  background-color: $primary-background;
 }
 
 .add-station-button {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  border-radius: 5px;
-  font-size: calc(5px + 2vmin);
-  margin: 10px;
-  padding: 10px;
+  @extend %basic-button;
+  &:active {
+    @extend %basic-button-active;
+  }
+}
+
+.empty-station-list-placeholder {
+  text-align: center;
 }
