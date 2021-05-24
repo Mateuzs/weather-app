@@ -4,7 +4,7 @@ import { DeviceType } from "../types";
 import { SCREEN_MIN_DESKTOP_WIDTH_PX } from "../constants";
 
 const recognizeDeviceType = (): DeviceType => {
-  const screenWidth = window?.screen?.width;
+  const screenWidth = window?.innerWidth;
 
   return screenWidth && screenWidth >= SCREEN_MIN_DESKTOP_WIDTH_PX
     ? DeviceType.DESKTOP

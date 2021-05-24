@@ -32,10 +32,11 @@ const mapForecastWeatherDataToWeatherDetails = (
     weather: [{ main = "", icon = "" }] = [{}],
     dt_txt = "",
   } = weatherApiObject;
+
   return {
     minTemperature: formatCelsiusValue(temp_min),
     maxTemperature: formatCelsiusValue(temp_max),
-    date: new Date(dt_txt).toDateString(),
+    date: new Date(dt_txt?.replace(/-/g, "/")).toDateString(),
     weatherIcon: icon,
     weatherShortDescription: main,
   };
