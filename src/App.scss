@@ -9,3 +9,7 @@
   font-size: $common-font-size;
   color: $primary-foreground;
 }
+
+.loading-component {
+  @extend %basic-container;
+}

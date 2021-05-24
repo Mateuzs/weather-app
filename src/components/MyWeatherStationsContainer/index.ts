@@ -1,1 +1,1 @@
-export { default as MyWeatherStationsContainer } from "./MyWeatherStationsContainer";
+export { default } from "./MyWeatherStationsContainer";

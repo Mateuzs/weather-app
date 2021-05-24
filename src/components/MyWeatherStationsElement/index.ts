@@ -1,1 +1,1 @@
-export { default as MyWeatherStationsElement } from "./MyWeatherStationsElement";
+export { default } from "./MyWeatherStationsElement";

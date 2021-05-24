@@ -1,5 +1,6 @@
 // in this simplified solution all wording has been defined in constants
 // in real scenario it's required a translate mechanism to support many languages
+export const LOADING_INFO = "Loading...";
 
 export const ROUTE_WEATHER = "/weather";
 export const ROUTE_MY_WEATHER_STATIONS = "/my-weather-stations";

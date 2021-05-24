@@ -1,1 +1,1 @@
-export { default as WeatherStationInputForm } from "./WeatherStationInputForm";
+export { default } from "./WeatherStationInputForm";

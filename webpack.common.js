@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const webpack = require("webpack");
 const path = require("path");
 
@@ -7,7 +8,7 @@ module.exports = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     publicPath: "/",
   },
   devServer: {
@@ -54,10 +55,9 @@ module.exports = {
       filename: "index.html",
     }),
     new webpack.DefinePlugin({
-      "process.env.WEATHER_API_KEY": JSON.stringify(
-        process.env.WEATHER_API_KEY
-      ),
+      "process.env.WEATHER_API_KEY": JSON.stringify(process.env.WEATHER_API_KEY),
     }),
+    // new BundleAnalyzerPlugin(),
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".json", ".js"],
