@@ -1,5 +1,6 @@
 export { default as ErrorMessage } from "./ErrorMessage";
 export { default as Home } from "./Home";
+export { default as LoadingComponent } from "./LoadingComponent";
 export { default as NotFoundPage } from "./NotFoundPage";
 export { default as NavBar } from "./NavBar";
 export { default as NavBarButton } from "./NavBarButton";

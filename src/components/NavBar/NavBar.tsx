@@ -1,8 +1,7 @@
 // external
-import React, { FunctionComponent } from "react";
-import { Link } from "react-router-dom";
+import { FunctionComponent } from "react";
 // components
-import { NavBarButton } from "../../components";
+import NavBarButton from "../../components/NavBarButton";
 // constansts, utils
 import {
   ROUTE_WEATHER,

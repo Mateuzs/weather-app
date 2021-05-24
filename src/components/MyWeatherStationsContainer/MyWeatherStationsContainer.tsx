@@ -21,23 +21,29 @@ const MyWeatherStationsContainer: FunctionComponent = () => {
 
   const handleAddingButtonClick = useCallback(() => setShowWeatherStationInputForm(true), []);
 
-  const onDeleteCallback = (weatherStationName: string) => {
-    const reducedWeatherStationsList = weatherStationList.filter(
-      (wStation) => wStation.name !== weatherStationName
-    );
-    localStorage.setItem(
-      MY_WEATHER_STATIONS_OBJECT_NAME,
-      JSON.stringify(reducedWeatherStationsList)
-    );
-    window.dispatchEvent(new Event(STORAGE_EVENT_NAME));
-  };
+  const onDeleteCallback = useCallback(
+    (weatherStationName: string) => {
+      const reducedWeatherStationsList = weatherStationList.filter(
+        (wStation) => wStation.name !== weatherStationName
+      );
+      localStorage.setItem(
+        MY_WEATHER_STATIONS_OBJECT_NAME,
+        JSON.stringify(reducedWeatherStationsList)
+      );
+      window.dispatchEvent(new Event(STORAGE_EVENT_NAME));
+    },
+    [weatherStationList]
+  );
 
-  const onCloseWeatherInputFormCallback = (weatherStation: WeatherStation) => {
-    setShowWeatherStationInputForm(false);
-    const newWeatherStationsList = [...weatherStationList, weatherStation];
-    localStorage.setItem(MY_WEATHER_STATIONS_OBJECT_NAME, JSON.stringify(newWeatherStationsList));
-    window.dispatchEvent(new Event(STORAGE_EVENT_NAME));
-  };
+  const onCloseWeatherInputFormCallback = useCallback(
+    (weatherStation: WeatherStation) => {
+      setShowWeatherStationInputForm(false);
+      const newWeatherStationsList = [...weatherStationList, weatherStation];
+      localStorage.setItem(MY_WEATHER_STATIONS_OBJECT_NAME, JSON.stringify(newWeatherStationsList));
+      window.dispatchEvent(new Event(STORAGE_EVENT_NAME));
+    },
+    [weatherStationList]
+  );
 
   const getWeatherStationsFromLocalStorage = () => {
     const savedWeatherStations = localStorage.getItem(MY_WEATHER_STATIONS_OBJECT_NAME);

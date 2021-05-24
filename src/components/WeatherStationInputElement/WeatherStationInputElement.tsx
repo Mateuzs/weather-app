@@ -1,5 +1,5 @@
 // external
-import { FunctionComponent, ChangeEvent, useCallback } from "react";
+import { FunctionComponent, ChangeEvent, useCallback, memo } from "react";
 // types
 import { WeatherStationInputElementProps } from "../../types";
 // styles
@@ -32,4 +32,4 @@ const WeatherStationInputElement: FunctionComponent<WeatherStationInputElementPr
   );
 };
 
-export default WeatherStationInputElement;
+export default memo(WeatherStationInputElement);

@@ -1,5 +1,5 @@
 // external
-import { FunctionComponent, useState, useEffect } from "react";
+import { FunctionComponent, useState, useEffect, memo } from "react";
 // components
 import { WeatherStationInputElement } from "../../components";
 // types
@@ -117,4 +117,4 @@ const WeatherStationInputForm: FunctionComponent<WeatherStationInputFormProps> =
   );
 };
 
-export default WeatherStationInputForm;
+export default memo(WeatherStationInputForm);

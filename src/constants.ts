@@ -56,7 +56,7 @@ export const WEATHER_STATION_LONGITUDE_PLACEHOLDER = "Longitude";
 export const WEATHER_STATION_ALTITUDE_DESCRIPTION = "must be a number";
 export const WEATHER_STATION_ALTITUDE_PLACEHOLDER = "Altitude";
 export const WEATHER_STATION_SAVE_BUTTON = "Save";
-
+export const DELETE_BUTTON_LABEL = "delete-button";
 export const SCREEN_MIN_DESKTOP_WIDTH_PX = 768;
 
 export const LATITUDE_MIN = -90;
