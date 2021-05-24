@@ -16,10 +16,12 @@
 
   button {
     @extend %basic-button;
-    border-radius: 8px;
-    margin: 0;
-    padding: 3px 10px;
-    text-align: center;
-    vertical-align: center;
+    background-color: $primary-background;
+    border: none;
+    color: $primary-foreground;
+    &:active {
+      color: $error-foreground;
+      transition: color 0s linear;
+    }
   }
 }

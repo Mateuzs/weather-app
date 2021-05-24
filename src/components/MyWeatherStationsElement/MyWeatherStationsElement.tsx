@@ -16,7 +16,9 @@ const MyWeatherStationsElement: FunctionComponent<MyWeatherStationsElementProps>
         <td>{longitude}</td>
         <td>{altitude}</td>
         <td>
-          <button onClick={() => onDeleteCallback(name)}>x</button>
+          <button onClick={() => onDeleteCallback(name)}>
+            <i className="bi bi-trash-fill"></i>
+          </button>
         </td>
       </tr>
     );
