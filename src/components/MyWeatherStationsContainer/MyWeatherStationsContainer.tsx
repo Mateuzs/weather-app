@@ -4,7 +4,7 @@ import { FunctionComponent, useState, useCallback, useEffect } from "react";
 import { WeatherStationInputForm, MyWeatherStationsList } from "../../components";
 // types
 import { WeatherStation } from "../../types";
-// utils, constants
+// constants, utils
 import {
   STORAGE_EVENT_NAME,
   MY_WEATHER_STATIONS_OBJECT_NAME,
@@ -16,7 +16,6 @@ import "./MyWeatherStationsContainer.scss";
 
 const MyWeatherStationsContainer: FunctionComponent = () => {
   const [showWeatherStationInputForm, setShowWeatherStationInputForm] = useState(false);
-
   const [weatherStationList, setWeatherStationList] = useState<WeatherStation[]>([]);
 
   const handleAddingButtonClick = useCallback(() => setShowWeatherStationInputForm(true), []);

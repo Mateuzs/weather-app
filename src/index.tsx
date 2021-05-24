@@ -1,7 +1,7 @@
 // external
 import React from "react";
 import ReactDOM from "react-dom";
-// compoents
+// components
 import App from "./App";
 // styles
 import "./index.scss";

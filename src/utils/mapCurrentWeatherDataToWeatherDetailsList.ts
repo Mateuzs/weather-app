@@ -3,8 +3,7 @@ import { WeatherApiCurrentWeather, WeatherDetails } from "../types";
 // constants, utils
 import { convertTimestampToLocalDate, formatCelsiusValue } from "../utils";
 
-// mapping introduces soft fallback in case contract with api is broken
-// in unexpected way (missing values)
+// mapping introduces soft fallback in case contract with api is broken (missing values)
 const mapCurrentWeatherDataToWeatherDetailsList = (
   weatherData: WeatherApiCurrentWeather
 ): WeatherDetails[] => {

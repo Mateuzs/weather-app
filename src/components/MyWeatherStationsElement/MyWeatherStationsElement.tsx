@@ -2,10 +2,10 @@
 import { FunctionComponent, memo } from "react";
 // types
 import { MyWeatherStationsElementProps } from "../../types";
-// styles
-import "./MyWeatherStationsElement.scss";
 //constants, utils
 import { DELETE_BUTTON_LABEL } from "../../constants";
+// styles
+import "./MyWeatherStationsElement.scss";
 
 const MyWeatherStationsElement: FunctionComponent<MyWeatherStationsElementProps> = ({
   weatherStation,

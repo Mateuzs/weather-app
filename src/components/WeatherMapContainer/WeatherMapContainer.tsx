@@ -3,6 +3,7 @@ import { FunctionComponent, memo } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 // types
 import { WeatherMapContainerProps, WeatherMapChangeViewProps } from "../../types";
+//constants, utils
 import { buildMapContainerStyleObject } from "../../utils";
 // styles
 import "./WeatherMapContainer.scss";
