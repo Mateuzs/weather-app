@@ -16,10 +16,7 @@ import "./NavBar.scss";
 const NavBar: FunctionComponent = () => {
   return (
     <div className="nav-bar">
-      <NavBarButton
-        navigationLink={ROUTE_WEATHER}
-        buttonText={WEATHER_BUTTON_LABEL}
-      />
+      <NavBarButton navigationLink={ROUTE_WEATHER} buttonText={WEATHER_BUTTON_LABEL} />
       <NavBarButton
         navigationLink={ROUTE_MY_WEATHER_STATIONS}
         buttonText={MY_WEATHER_STATIONS_BUTTON_LABEL}

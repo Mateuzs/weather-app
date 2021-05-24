@@ -2,10 +2,7 @@
 import { FunctionComponent, memo } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 // types
-import {
-  WeatherMapContainerProps,
-  WeatherMapChangeViewProps,
-} from "../../types";
+import { WeatherMapContainerProps, WeatherMapChangeViewProps } from "../../types";
 import { buildMapContainerStyleObject } from "../../utils";
 // styles
 import "./WeatherMapContainer.scss";
@@ -36,11 +33,7 @@ const WeatherMapContainer: FunctionComponent<WeatherMapContainerProps> = ({
         scrollWheelZoom={false}
         style={buildMapContainerStyleObject(deviceType)}
       >
-        <WeatherMapChangeView
-          longitude={longitude}
-          latitude={latitude}
-          zoom={zoom}
-        />
+        <WeatherMapChangeView longitude={longitude} latitude={latitude} zoom={zoom} />
         {/* a special adnotation is a licence requirement in order to use a leaflet map */}
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

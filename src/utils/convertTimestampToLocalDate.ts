@@ -1,7 +1,4 @@
-const convertTimestampToLocalDate = (
-  timestamp: number | null,
-  timezone: number | null
-) => {
+const convertTimestampToLocalDate = (timestamp: number | null, timezone: number | null) => {
   if ([timestamp, timezone].some((e) => e === null)) return "";
 
   // Multiplication is needed to represent timestamp in miliseconds

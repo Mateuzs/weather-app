@@ -1,19 +1,8 @@
 // external
-import {
-  FunctionComponent,
-  ChangeEvent,
-  useCallback,
-  useEffect,
-  useState,
-  useMemo,
-} from "react";
+import { FunctionComponent, ChangeEvent, useCallback, useEffect, useState, useMemo } from "react";
 import axios from "axios";
 // components
-import {
-  WeatherMapContainer,
-  WeatherDetailsList,
-  ErrorMessage,
-} from "../../components";
+import { WeatherMapContainer, WeatherDetailsList, ErrorMessage } from "../../components";
 //types
 import {
   CityLocation,
@@ -49,64 +38,42 @@ const WeatherContainer: FunctionComponent = () => {
   // in order to not hardcode vulnerable data in codebase
   const weatherApiKey = process.env.WEATHER_API_KEY;
   const {
-    weatherApi: {
-      origin: weatherApiOrigin,
-      currentWeatherPathname,
-      forecastWeatherPathname,
-    },
+    weatherApi: { origin: weatherApiOrigin, currentWeatherPathname, forecastWeatherPathname },
   } = config;
 
   const deviceType = useMemo(() => recognizeDeviceType(), []);
 
-  const [weatherType, setWeatherType] = useState<WeatherType>(
-    WeatherType.CURRENT
-  );
+  const [weatherType, setWeatherType] = useState<WeatherType>(WeatherType.CURRENT);
   const [inputField, setInputField] = useState<string>("");
   const [searchCityName, setSearchCityName] = useState<string>("");
   const [searchingError, setSearchingError] = useState<boolean>(false);
   const [cityLocation, setCityLocation] = useState<CityLocation | null>(null);
-  const [weatherDetailsList, setWeatherDetailsList] = useState<
-    WeatherDetails[]
-  >([]);
+  const [weatherDetailsList, setWeatherDetailsList] = useState<WeatherDetails[]>([]);
 
-  const displayWeatherDetailsList =
-    !searchingError && cityLocation && weatherDetailsList.length;
+  const displayWeatherDetailsList = !searchingError && cityLocation && weatherDetailsList.length;
 
-  const displayDetailPlaceholder =
-    !searchingError && !cityLocation && !weatherDetailsList.length;
+  const displayDetailPlaceholder = !searchingError && !cityLocation && !weatherDetailsList.length;
 
   const currentWeatherButtonClassName =
-    weatherType === WeatherType.CURRENT
-      ? "active-weather-config-button"
-      : "weather-config-button";
+    weatherType === WeatherType.CURRENT ? "active-weather-config-button" : "weather-config-button";
 
   const forecastWeatherButtonClassName =
-    weatherType === WeatherType.FORECAST
-      ? "active-weather-config-button"
-      : "weather-config-button";
+    weatherType === WeatherType.FORECAST ? "active-weather-config-button" : "weather-config-button";
 
   const handleSearchButtonClick = () => setSearchCityName(inputField);
 
-  const handleWeatherButtonClick = useCallback(
-    (wType: WeatherType) => setWeatherType(wType),
-    []
-  );
+  const handleWeatherButtonClick = useCallback((wType: WeatherType) => setWeatherType(wType), []);
 
-  const handleInputChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setInputField(event.target.value);
-    },
-    []
-  );
+  const handleInputChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    setInputField(event.target.value);
+  }, []);
 
   const fetchCurrentWeatherData = async (city: string) => {
     const weatherApiUrl = `${weatherApiOrigin}${currentWeatherPathname}?q=${city}&units=${CELSIUS_UNITS_QUERY_PARAM}&appid=${weatherApiKey}`;
     try {
-      const weatherData = (await axios.get(weatherApiUrl))
-        .data as WeatherApiCurrentWeather;
+      const weatherData = (await axios.get(weatherApiUrl)).data as WeatherApiCurrentWeather;
 
-      const currentWeatherDetailsList =
-        mapCurrentWeatherDataToWeatherDetailsList(weatherData);
+      const currentWeatherDetailsList = mapCurrentWeatherDataToWeatherDetailsList(weatherData);
       const currentCityLocation = getCityLocation(weatherData);
 
       setCityLocation(currentCityLocation);
@@ -120,11 +87,9 @@ const WeatherContainer: FunctionComponent = () => {
   const fetchForecastWeatherData = async (city: string) => {
     const weatherApiUrl = `${weatherApiOrigin}${forecastWeatherPathname}?q=${city}&units=${CELSIUS_UNITS_QUERY_PARAM}&appid=${weatherApiKey}`;
     try {
-      const weatherData = (await axios.get(weatherApiUrl))
-        .data as WeatherApiForecastWeather;
+      const weatherData = (await axios.get(weatherApiUrl)).data as WeatherApiForecastWeather;
 
-      const forecastWeatherDetailsList =
-        mapForecastWeatherDataToWeatherDetailsList(weatherData);
+      const forecastWeatherDetailsList = mapForecastWeatherDataToWeatherDetailsList(weatherData);
       const forecastCityLocation = getCityLocation(weatherData);
 
       setCityLocation(forecastCityLocation);
@@ -162,10 +127,7 @@ const WeatherContainer: FunctionComponent = () => {
             onChange={handleInputChange}
             className="weather-config-input-field"
           ></input>
-          <button
-            onClick={handleSearchButtonClick}
-            className="weather-config-confirm-button"
-          >
+          <button onClick={handleSearchButtonClick} className="weather-config-confirm-button">
             {SEARCH_LABEL}
           </button>
         </div>
@@ -184,9 +146,7 @@ const WeatherContainer: FunctionComponent = () => {
           </button>
         </div>
       </div>
-      {searchingError && (
-        <ErrorMessage errorMessage={SEARCHING_ERROR_MESSAGE} />
-      )}
+      {searchingError && <ErrorMessage errorMessage={SEARCHING_ERROR_MESSAGE} />}
 
       {displayWeatherDetailsList && (
         <>

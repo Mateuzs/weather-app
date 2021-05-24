@@ -19,6 +19,7 @@
     background-color: $primary-background;
     border: none;
     color: $primary-foreground;
+    margin: 0;
     &:active {
       color: $error-foreground;
       transition: color 0s linear;

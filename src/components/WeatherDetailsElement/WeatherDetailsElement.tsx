@@ -17,18 +17,10 @@ import "./WeatherDetailsElement.scss";
 const WeatherDetailsElement: FunctionComponent<WeatherDetailsElementProps> = ({
   weatherDetailsElement,
 }) => {
+  const { date, weatherIcon, weatherShortDescription, minTemperature, maxTemperature } =
+    weatherDetailsElement;
   const {
-    date,
-    weatherIcon,
-    weatherShortDescription,
-    minTemperature,
-    maxTemperature,
-  } = weatherDetailsElement;
-  const {
-    weatherImage: {
-      origin: weatherImageOrigin,
-      pathname: weatherImagePathname,
-    },
+    weatherImage: { origin: weatherImageOrigin, pathname: weatherImagePathname },
   } = config;
   const imageUrl = `${weatherImageOrigin}${weatherImagePathname.replace(
     URL_IMAGE_ID_PLACEHOLDER,
@@ -39,11 +31,7 @@ const WeatherDetailsElement: FunctionComponent<WeatherDetailsElementProps> = ({
     <tr className="weather-details-element">
       <td>{date}</td>
       <td className="weather-icon-container">
-        <LazyLoadImage
-          height={WEATHER_ICON_HEIGHT}
-          src={imageUrl}
-          width={WEATHER_ICON_WIDTH}
-        />
+        <LazyLoadImage height={WEATHER_ICON_HEIGHT} src={imageUrl} width={WEATHER_ICON_WIDTH} />
       </td>
       <td>{weatherShortDescription}</td>
       <td>

@@ -5,8 +5,8 @@ import { ErrorMessageProps } from "../../types";
 // styles
 import "./ErrorMessage.scss";
 
-const ErrorMessage: FunctionComponent<ErrorMessageProps> = ({
-  errorMessage,
-}) => <h3 className="error-message">{errorMessage}</h3>;
+const ErrorMessage: FunctionComponent<ErrorMessageProps> = ({ errorMessage }) => (
+  <h3 className="error-message">{errorMessage}</h3>
+);
 
 export default memo(ErrorMessage);

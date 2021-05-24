@@ -1,9 +1,5 @@
 // types
-import {
-  WeatherApiCurrentWeather,
-  CityLocation,
-  WeatherApiForecastWeather,
-} from "../types";
+import { WeatherApiCurrentWeather, CityLocation, WeatherApiForecastWeather } from "../types";
 
 const getCityLocation = (
   weatherData: WeatherApiCurrentWeather | WeatherApiForecastWeather

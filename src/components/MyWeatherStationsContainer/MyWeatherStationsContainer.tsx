@@ -1,10 +1,7 @@
 // external
 import { FunctionComponent, useState, useCallback, useEffect } from "react";
 // components
-import {
-  WeatherStationInputForm,
-  MyWeatherStationsList,
-} from "../../components";
+import { WeatherStationInputForm, MyWeatherStationsList } from "../../components";
 // types
 import { WeatherStation } from "../../types";
 // utils, constants
@@ -18,17 +15,11 @@ import {
 import "./MyWeatherStationsContainer.scss";
 
 const MyWeatherStationsContainer: FunctionComponent = () => {
-  const [showWeatherStationInputForm, setShowWeatherStationInputForm] =
-    useState(false);
+  const [showWeatherStationInputForm, setShowWeatherStationInputForm] = useState(false);
 
-  const [weatherStationList, setWeatherStationList] = useState<
-    WeatherStation[]
-  >([]);
+  const [weatherStationList, setWeatherStationList] = useState<WeatherStation[]>([]);
 
-  const handleAddingButtonClick = useCallback(
-    () => setShowWeatherStationInputForm(true),
-    []
-  );
+  const handleAddingButtonClick = useCallback(() => setShowWeatherStationInputForm(true), []);
 
   const onDeleteCallback = (weatherStationName: string) => {
     const reducedWeatherStationsList = weatherStationList.filter(
@@ -44,17 +35,12 @@ const MyWeatherStationsContainer: FunctionComponent = () => {
   const onCloseWeatherInputFormCallback = (weatherStation: WeatherStation) => {
     setShowWeatherStationInputForm(false);
     const newWeatherStationsList = [...weatherStationList, weatherStation];
-    localStorage.setItem(
-      MY_WEATHER_STATIONS_OBJECT_NAME,
-      JSON.stringify(newWeatherStationsList)
-    );
+    localStorage.setItem(MY_WEATHER_STATIONS_OBJECT_NAME, JSON.stringify(newWeatherStationsList));
     window.dispatchEvent(new Event(STORAGE_EVENT_NAME));
   };
 
   const getWeatherStationsFromLocalStorage = () => {
-    const savedWeatherStations = localStorage.getItem(
-      MY_WEATHER_STATIONS_OBJECT_NAME
-    );
+    const savedWeatherStations = localStorage.getItem(MY_WEATHER_STATIONS_OBJECT_NAME);
 
     if (savedWeatherStations) {
       const parsedWeatherStations = JSON.parse(savedWeatherStations);
@@ -69,16 +55,9 @@ const MyWeatherStationsContainer: FunctionComponent = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener(
-      STORAGE_EVENT_NAME,
-      getWeatherStationsFromLocalStorage
-    );
+    window.addEventListener(STORAGE_EVENT_NAME, getWeatherStationsFromLocalStorage);
 
-    return () =>
-      window.removeEventListener(
-        STORAGE_EVENT_NAME,
-        getWeatherStationsFromLocalStorage
-      );
+    return () => window.removeEventListener(STORAGE_EVENT_NAME, getWeatherStationsFromLocalStorage);
   }, []);
 
   return (

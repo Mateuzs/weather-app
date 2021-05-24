@@ -18,9 +18,8 @@ const mapForecastWeatherDataToWeatherDetailsList = (
     .map(mapForecastWeatherDataToWeatherDetails);
 };
 
-const chooseMiddayForecast = (
-  weatherApiObject: WeatherApiForecastWeatherSample
-) => weatherApiObject.dt_txt?.split(" ")[1] === MIDDAY_TIME;
+const chooseMiddayForecast = (weatherApiObject: WeatherApiForecastWeatherSample) =>
+  weatherApiObject.dt_txt?.split(" ")[1] === MIDDAY_TIME;
 
 // mapping introduces soft fallback in case contract with api is broken
 // in unexpected way (missing values)
