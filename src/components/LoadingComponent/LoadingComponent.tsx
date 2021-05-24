@@ -1,13 +1,13 @@
 // external
 import { FunctionComponent } from "react";
 // constants
-import { HOME_TITLE } from "../../constants";
+import { LOADING_INFO } from "../../constants";
 // styles
 import "./LoadingComponent.scss";
 
 const LoadingComponent: FunctionComponent = () => (
   <div className="loading-component">
-    <h3>{HOME_TITLE}</h3>
+    <h3>{LOADING_INFO}</h3>
   </div>
 );
 
