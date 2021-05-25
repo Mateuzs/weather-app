@@ -42,7 +42,8 @@ types are removed from bundle.
 
 For components styling there has been used a [Sass](https://sass-lang.com/) stylesheet language which is fully compiled to CSS. It comes
 with great features allowing constants definition, common styles inheritance, composition, importing, etc. which
-reduces copying the same styles between components and application elements.
+reduces copying the same styles between components and application elements. To reach responsive web app I used flex styles for dynamically
+adjust component size and place according to the screen size, and also provided dynamic font calculation.
 
 Project is using a [Webpack](https://webpack.js.org/) bundler, which is a very popular tool used for building the application and maintain the
 dependencies. It allows to define a development and optimized production build. Most important features are: production build
@@ -102,7 +103,7 @@ In order to provide best performance possible I would introduce the strategy I s
 
 1. I would check the build of bundles with webpack and webpack-bundle-analyzer, if required I would split the code and
    dependencies in a way that would provide the chunks small enough. I would use the webpack features (tree shaking,
-   code splitting) to provide optimized bundles and use some React techiques like React lazy and Suspense to split code -  
+   code splitting) to provide optimized bundles and use some React techiques like React lazy and Suspense to split code -
    this allow user to see first view as soon as possible, then fetch asynchronously the rest of the code.
 2. I would use React Hooks and memoization, combined with react-devtools, chrome-devtools (performance tab, flame graph),
    to spot any performance issues connected to state handling, rerendering, animation, blocking execution etc.
