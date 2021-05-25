@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // components
 import LoadingComponent from "./components/LoadingComponent";
 import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import NotFoundPage from "./components/NotFoundPage";
 // constants, utils
 import {
   ROUTE_WEATHER,
@@ -15,8 +17,6 @@ import {
 import "./App.scss";
 
 // lazy loaded components
-const Home = lazy(() => import("./components/Home"));
-const NotFoundPage = lazy(() => import("./components/NotFoundPage"));
 const WeatherContainer = lazy(() => import("./components/WeatherContainer"));
 const MyWeatherStationsContainer = lazy(() => import("./components/MyWeatherStationsContainer"));
 
@@ -25,14 +25,14 @@ const App: FunctionComponent = () => {
     <div className="App-container">
       <Router>
         <NavBar />
-        <Suspense fallback={<LoadingComponent />}>
-          <Switch>
-            <Route path={ROUTE_DEFAULT} exact component={Home} />
+        <Switch>
+          <Route path={ROUTE_DEFAULT} exact component={Home} />
+          <Suspense fallback={<LoadingComponent />}>
             <Route path={ROUTE_WEATHER} component={WeatherContainer} />
             <Route path={ROUTE_MY_WEATHER_STATIONS} component={MyWeatherStationsContainer} />
-            <Route path={ROUTE_NOT_FOUND} component={NotFoundPage} />
-          </Switch>
-        </Suspense>
+          </Suspense>
+          <Route path={ROUTE_NOT_FOUND} component={NotFoundPage} />
+        </Switch>
       </Router>
     </div>
   );
