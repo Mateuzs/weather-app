@@ -55,7 +55,7 @@ module.exports = {
       filename: "index.html",
     }),
     new webpack.DefinePlugin({
-      "process.env.WEATHER_API_KEY": JSON.stringify(process.env.WEATHER_API_KEY),
+      "process.env.WEATHER_API_KEY": JSON.stringify(process.env.WEATHER_API_KEY || "66a58cd39f59a5da5adef8630cdb5627"),
     }),
     // new BundleAnalyzerPlugin(),
   ],
