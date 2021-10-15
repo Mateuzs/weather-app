@@ -43,7 +43,8 @@
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": [

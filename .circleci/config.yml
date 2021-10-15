@@ -9,9 +9,8 @@ commands:
       - checkout
       - run:
           command: |
-            sudo npm install -g yarn
-            sudo yarn
-            sudo yarn semantic-release
+            yarn install
+            yarn semantic-release
 
 jobs:
   release_job:
