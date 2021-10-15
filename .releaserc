@@ -3,6 +3,7 @@
     "main"
   ],
   "plugins": [
-    "@semantic-release/npm"
+    "@semantic-release/npm",
+    "@semantic-release/git"
   ]
 }
