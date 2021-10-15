@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@4.7.0
-
 commands:
   release_app:
     steps:
@@ -14,7 +11,9 @@ commands:
 
 jobs:
   release_job:
-    executor: node/default
+    build:
+    docker:
+      - image: cimg/node:16.11.1
     steps:
       - release_app
 
