@@ -1,0 +1,30 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@4.5
+
+commands:
+  release_app:
+    steps:
+      - checkout
+      - run:
+        name: Yarn install
+        command: |
+          npm  install -g yarn
+          yarn
+          yarn semantic-release
+
+jobs:
+  release:
+    executor: node/default
+    steps:
+      - release_app
+
+workflows:
+  release:
+    jobs:
+      - release:
+        context: general_context
+        filters:
+          branches:
+            only: main
