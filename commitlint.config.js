@@ -6,7 +6,7 @@ module.exports = {
       2,
       "always",
       (parsed) => {
-        const scopeRegex = /^MEMBERSHIP-\d{3,4}$/;
+        const scopeRegex = /^MEMBERSHIP-\d{3,4}$|release/;
         console.log(parsed);
         const isScopeValid = (parsed.scope && parsed.scope.match(scopeRegex)) || false;
         if (isScopeValid) {
