@@ -9,7 +9,7 @@
       "@semantic-release/commit-analyzer",
       {
         "preset": "conventionalcommits",
-        "realeaseRules": [
+        "releaseRules": [
           {
             "type": "breaking",
             "release": "major"
