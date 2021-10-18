@@ -2,6 +2,7 @@ module.exports = {
   extends: ["@commitlint/config-conventional"],
   plugins: ["commitlint-plugin-function-rules"],
   rules: {
+    "body-max-line-length": [0],
     "type-enum": [
       2,
       "always",
