@@ -5,7 +5,7 @@ module.exports = {
     "type-enum": [
       2,
       "always",
-      ["feat", "fix", "docs", "style", "refactor", "test", "revert", "breaking"],
+      ["feat", "fix", "docs", "style", "refactor", "test", "revert", "chore", "breaking"],
     ],
     "function-rules/scope-enum": [
       2,
