@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/Mateuzs/weather-app/compare/v2.2.0...v2.3.0) (2021-10-18)
+
+
+### Features
+
+* **MEMBERSHIP-111:** providing additional info ([57a4c5c](https://github.com/Mateuzs/weather-app/commit/57a4c5c7a0d498569a165a94402ef34e616414dd))
+
 # [2.2.0](https://github.com/Mateuzs/weather-app/compare/v2.1.0...v2.2.0) (2021-10-18)
 
 
