@@ -8,6 +8,7 @@ import "./Home.scss";
 const Home: FunctionComponent = () => (
   <div className="home-container">
     <h3>{HOME_TITLE}</h3>
+    <h4>ADDITIONAL INFO</h4>
   </div>
 );
 
