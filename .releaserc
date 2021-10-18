@@ -4,6 +4,18 @@
   ],
   "plugins": [
     "@semantic-release/npm",
-    "@semantic-release/git"
+    "@semantic-release/git",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "parserOpts": {
+          "noteKeywords": [
+            "BREAKING CHANGE",
+            "BREAKING CHANGES"
+          ]
+        }
+      }
+    ]
   ]
 }
